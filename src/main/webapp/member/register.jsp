@@ -4,30 +4,73 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>회원 가입</title>
+<link href="../css/registerpage.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+window.onload = function() {
+	regForm.id.focus();
+	document.getElementById("idCheck").onclick = idCheck;
+}
+</script>
 </head>
 <body>
-<form action="login.jsp" method="post">
-	<br>
-		<table>
-			<tr>
-				<td>
-					<input type="text" name="id" value="id">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="text" name="pw" value="pw">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<button type="button" >
-						로그인
+<div id="header">
+	<div id="wrapper">
+	<form name="regForm" method="post" action="registerproc.jsp">
+		<div id="content">
+		
+			<div>
+				<h3>
+				<label for="id">아이디</label>
+				</h3>
+					<input type="text" id="id" class="box" name="id">
+					<button type="button" id="idCheck">
+						<span>중복체크</span>
 					</button>
-				</td>
-			</tr>
-		</table>
-</form>
+			</div>
+			<div>
+				<h3>
+				<label for="pw">비밀번호</label>
+				</h3>
+					<input type="text" id="pw" class="box">
+			</div>
+			<div>
+				<h3>
+				<label for="repw">비밀번호 확인</label>
+				</h3>
+					<input type="text" id="repw" class="box">
+			</div>
+			<div>
+				<h3>
+				<label for="uname">이름</label>
+				</h3>
+					<input type="text" id="uname" class="box">
+			</div>
+			<div>
+				<h3>
+				<label for="gender">성별</label>
+				</h3>
+					<input type="radio" id="gender" value="1" class="box_gen">
+					<label for="1">남성</label>
+					 <br>
+					<input type="radio" id="gender" value="0" class="box_gen">
+					<label for="0">여성</label>
+			</div>
+			<div>
+				<h3>
+				<label for="email">이메일</label>
+				</h3>
+					<input type="text" id="email" class="box">
+			</div>
+			<%-- 회원가입 버튼 --%>
+			<div class="btn_area">
+				<button type="button" id="btn">
+					<span>가입하기</span>
+				</button>
+			 </div>
+		</div>
+	</form>
+	</div>
+</div>
 </body>
 </html>
