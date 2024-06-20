@@ -19,6 +19,20 @@ body {
     height: 100%;
     background: #f5f6f7;
 }
+
+.login{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.footer {
+	width: 100%;
+	height: 117px; 
+	position: absolute;
+	bottom: 0;
+}
+
 #logo {
     width: 240px;
     height: 44px;
@@ -28,6 +42,7 @@ body {
 #header {
     padding-top: 62px;
     padding-bottom: 20px;
+    height: 117px; 
 }
 #wrapper {
     position: relative;
@@ -83,7 +98,7 @@ h3 {
     margin: 30px 0 91px;
 }
 
-#btn {
+#btnSubmit {
     width: 100%;
     padding: 21px 0 17px;
 
@@ -93,4 +108,27 @@ h3 {
     background-color: #649844;
     font-size: 20px;
     font-weight: 400;
+}
+
+#btn_close{
+	width: 30%;
+	
+	border: 0;
+	color: #fff;
+    background-color: #649844;
+}
+
+.bottom_info{
+	border-top: 1px solid black;
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.adminp_btn{
+	float: right;
+	border: none;
+	background: none;
+	cursor: pointer;
 }

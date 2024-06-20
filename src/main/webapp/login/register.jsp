@@ -6,10 +6,13 @@
 <meta charset="UTF-8">
 <title>회원 가입</title>
 <link href="../css/registerpage.css" rel="stylesheet" type="text/css">
+<script src="../js/script.js"></script>
+
 <script type="text/javascript">
 window.onload = function() {
 	regForm.id.focus();
 	document.getElementById("idCheck").onclick = idCheck;
+	document.getElementById("btnSubmit").onclick = inputCheck;
 }
 </script>
 </head>
@@ -24,6 +27,7 @@ window.onload = function() {
 				<label for="id">아이디</label>
 				</h3>
 					<input type="text" id="id" class="box" name="id">
+					<span class="error_next_box"></span>
 					<button type="button" id="idCheck">
 						<span>중복체크</span>
 					</button>
@@ -64,7 +68,7 @@ window.onload = function() {
 			</div>
 			<%-- 회원가입 버튼 --%>
 			<div class="btn_area">
-				<button type="button" id="btn">
+				<button type="button" id="btnSubmit" >
 					<span>가입하기</span>
 				</button>
 			 </div>

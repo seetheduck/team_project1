@@ -8,6 +8,7 @@
 <link href="../css/registerpage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="login">
 <form action="login.jsp" method="post">
 <div id="header">
 	<div id="wrapper">
@@ -25,6 +26,10 @@
 				</button>
 			 </div>
 		</div>
+	</div>
+</div>
+	<div class="footer">
+		<%@ include file="login_bottom.jsp" %>
 	</div>
 </div>
 </form>

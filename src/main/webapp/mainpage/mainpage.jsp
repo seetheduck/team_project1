@@ -10,6 +10,8 @@
 <body>
 <div id="container" >
 	<div class="header">
+		<%@ include file="main_top.jsp" %>
+		
 	</div>
 	<div class="content">
 		<div class="top-content">
@@ -26,6 +28,7 @@
 		</div>
 	</div>
 	<div class="footer">	
+		<%@ include file="main_bottom.jsp" %>
 	</div>
 
 </div>
