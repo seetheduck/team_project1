@@ -2,10 +2,6 @@ package myReply;
 
 import java.time.LocalDate;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 public class ReplyBean {
 	private int reply_no, reply_book_no, reply_point, reply_like_cnt, 
 	reply_del_is, reply_blocked, reply_blocked_cnt, reply_gnum, reply_onum;

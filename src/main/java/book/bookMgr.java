@@ -39,7 +39,7 @@ public class bookMgr {
 				
 			}
 		} catch (Exception e) {
-			System.out.println("myReplyAll err : " + e);
+			System.out.println("getBook err : " + e);
 		} finally {
 			try {
 				if (rs != null)
