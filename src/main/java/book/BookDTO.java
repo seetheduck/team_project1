@@ -1,8 +1,8 @@
 package book;
 
 public class BookDTO {
-	int bum;
-	String title,author,publisher,pyear,thumb_nail;
+	int bum,pyear;
+	String title,author,publisher,thumb_nail;
 	public int getBum() {
 		return bum;
 	}
@@ -27,10 +27,10 @@ public class BookDTO {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public String getPyear() {
+	public int getPyear() {
 		return pyear;
 	}
-	public void setPyear(String pyear) {
+	public void setPyear(int pyear) {
 		this.pyear = pyear;
 	}
 	public String getThumb_nail() {

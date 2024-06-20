@@ -1,8 +1,8 @@
 package report;
 
 public class ReportDTO {
-	private int report_no,report_reply_no;
-	private String reporter_user_id,report_date,report_code,reporter_ip,reported_user_ip,reported_user_no;
+	private int report_no,report_reply_no,report_code;
+	private String reporter_user_id,report_date,reporter_ip,reported_user_ip,reported_user_no;
 
 	public int getReport_no() {
 		return report_no;
@@ -36,11 +36,11 @@ public class ReportDTO {
 		this.report_date = report_date;
 	}
 
-	public String getReport_code() {
+	public int getReport_code() {
 		return report_code;
 	}
 
-	public void setReport_code(String report_code) {
+	public void setReport_code(int report_code) {
 		this.report_code = report_code;
 	}
 

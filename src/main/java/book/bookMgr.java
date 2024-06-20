@@ -27,16 +27,22 @@ public class bookMgr {
 	}
 	//리뷰쓴 책 가져오기
 	public BookDTO getBook(int no){
-		BookDTO dto = new BookDTO();
+		BookDTO dto = null;
 		try {
 			conn = ds.getConnection();
-			String sql = "";
+			String sql = "select * from book where bnum=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				
+				dto = new BookDTO();
+				dto.setBum(rs.getInt("bnum"));
+				dto.setTitle(rs.getString("title"));
+				dto.setAuthor(rs.getString("author"));
+				dto.setPublisher(rs.getString("publisher"));
+				dto.setThumb_nail(rs.getString("thumb_nail"));
+				dto.setPyear(rs.getInt("pyear"));
 			}
 		} catch (Exception e) {
 			System.out.println("getBook err : " + e);

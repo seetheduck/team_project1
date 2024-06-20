@@ -32,7 +32,7 @@ public class ReportMgr {
 			pstmt.setInt(1, repoBean.getReport_no());
 			pstmt.setInt(2, repoBean.getReport_reply_no());
 			pstmt.setString(3,repoBean.getReporter_user_id());
-			pstmt.setString(4, repoBean.getReport_code());
+			pstmt.setInt(4, repoBean.getReport_code());
 			pstmt.setString(5, repoBean.getReporter_ip());
 			pstmt.setString(6, repoBean.getReported_user_ip());
 			pstmt.setString(7, repoBean.getReported_user_no());
