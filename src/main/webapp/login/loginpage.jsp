@@ -24,6 +24,9 @@
 				<button type="button" id="btn">
 					<span>로그인</span>
 				</button>
+				<button type="button" id="btn">
+					<span><a href="register.jsp">회원가입</a></span>
+				</button>
 			 </div>
 		</div>
 	</div>

@@ -36,7 +36,7 @@ window.onload = function() {
 				<h3>
 				<label for="pw">비밀번호</label>
 				</h3>
-					<input type="text" id="pw" class="box">
+					<input type="text" id="pw" class="box" name="pw">
 			</div>
 			<div>
 				<h3>
@@ -48,7 +48,7 @@ window.onload = function() {
 				<h3>
 				<label for="uname">이름</label>
 				</h3>
-					<input type="text" id="uname" class="box">
+					<input type="text" id="uname" class="box" name="uname">
 			</div>
 			<div>
 				<h3>
@@ -64,7 +64,7 @@ window.onload = function() {
 				<h3>
 				<label for="email">이메일</label>
 				</h3>
-					<input type="text" id="email" class="box">
+					<input type="text" id="email" class="box" name="email">
 			</div>
 			<%-- 회원가입 버튼 --%>
 			<div class="btn_area">
