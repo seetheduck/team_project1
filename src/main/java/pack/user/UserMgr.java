@@ -47,7 +47,7 @@ public class UserMgr {
 		return b;
 	}
 	//user테이블의 최대 no 수
-		public int CurrentMaxNo() {  
+		public int currentMaxNo() {  
 			String sql = "select max(no) from user";
 			int no = 0;
 			
@@ -55,7 +55,9 @@ public class UserMgr {
 				conn = ds.getConnection();
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
-				if(rs.next()) no = rs.getInt(1);
+				if(rs.next()) {
+					no = rs.getInt(1);					
+				}
 			} catch (Exception e) {
 				System.out.println("currentMaxNum err : " + e);
 			}finally {
@@ -71,7 +73,7 @@ public class UserMgr {
 			return no;
 		}
 	
-	public boolean UserInsert(UserBean userbean) {
+	public boolean userInsert(UserBean userbean) {
 		boolean b = false;
 		try {
 			

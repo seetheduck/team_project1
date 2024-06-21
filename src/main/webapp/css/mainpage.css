@@ -1,23 +1,108 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/NanumGothic-Regular.ttf') format('truetype');
+}
+
 .header {
 	height: 117px; background-color: grey;
 }
+
 .content{
 	height: 1466px; background-color: white;
 	
 .top-content{
-		width: 1008px; height: 313px; background-color: green; margin: auto; margin-top: 50px; 
+		background-image: url("../image/mainbanner_imsi.jpg");
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: right;
+		width: 1008px; 
+		height: 313px; 
+		margin: auto; 
+		margin-top: 50px; 
+		
 	}
+h3{
+	position: relative;
+	left: 70px;
+	top: 10px;
+}
+
 .rec-review {
-	width: 1008px; height: 268px; background-color: yellow; margin: auto; margin-top: 50px;
+	width: 1008px; 
+	height: 268px; 
+	margin: auto; 
+	margin-top: 50px;
+}
+h2{
+	width: 1008px; 
+	height: 30px;
+	
+}
+.review-first{
+	width: 550px;
+	height: 214px;
+	border: 1px solid;
+	float: left;
+}
+.review-second{
+	width: 415px;
+	height: 94px;
+	border: 1px solid;
+	float: right;
+}
+.review-third{
+	width: 415px;
+	height: 94px;
+	border: 1px solid;
+	float: right;
+	margin-top: 25px;	
 }
 
 .event-banner{
-	width: 1008px; height: 233px; background-color: blue; margin: auto; margin-top: 45px;
+	width: 1008px; height: 233px; background-color: yellow; margin: auto; margin-top: 45px;
 }
 
 .rec-book{
-	width: 1008px; height: 355px; background-color: gray; margin: auto; margin-top: 84px;
+	width: 1008px; 
+	height: 355px; 
+	margin: auto; 
+	margin-top: 84px;
+}
+.book-first{
+	width: 230px;
+	height: 230px;
+	border: 1px solid;
+	border-radius: 50%;
+	float: left;
+}
+.book-second{
+	width: 230px;
+	height: 230px;
+	border: 1px solid;
+	border-radius: 50%;
+	float: left;
+	margin-left: 25px;
+	margin-top: 50px;
+}
+.book-third{
+	width: 230px;
+	height: 230px;
+	border: 1px solid;
+	border-radius: 50%;
+	float: left;
+	margin-left: 25px;
+}
+.book-fourth{
+	width: 230px;
+	height: 230px;
+	border: 1px solid;
+	border-radius: 50%;
+	float: left;
+	margin-left:25px;
+	margin-top: 50px;
 }
 	
 }

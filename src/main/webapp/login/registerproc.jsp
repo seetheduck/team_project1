@@ -9,7 +9,11 @@ request.setCharacterEncoding("utf-8"); //먼저 주고 받기
 
 <%
 //회원가입 여부 확인
-boolean b = userMgr.UserInsert(userbean);
+int newNo = userMgr.currentMaxNo() + 1;
+//System.out.println("newNo : " + newNo);
+userbean.setNo(newNo);
+
+boolean b = userMgr.userInsert(userbean);
 %>
 <!DOCTYPE html>
 <html>
