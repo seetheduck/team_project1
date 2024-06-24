@@ -1,0 +1,142 @@
+/* styles.css */
+
+
+/* 바탕색과 폰트 설정 */
+body {
+    font-family: Arial, sans-serif; /*나눔체 사용 예정*/
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/*이미지 크기*/
+img {
+	width:300px;
+}
+
+/* 각 댓글 카드를 담는 컨테이너 */
+.card-container { /*왜 옆으로 나열이 안될까..*/
+    /*background-color: #888;*/
+    /*width: calc(33.33% - 20px);*/
+    display: flex;
+    flex-wrap: wrap;/*각 카드가 화면에 넘치면 다음줄로 이동*/
+    gap: 20px; /* 각 카드 사이의 간격 설정 */
+    justify-content: space-around; /* 카드를 가운데 정렬 */
+}
+
+/* 댓글 카드 스타일 */
+.card { /* 한 줄에 세 개의 카드가 들어가도록 너비 설정 */
+	width: calc(33.33% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* 각 카드 아래 여백 설정 */
+    cursor:point;
+}
+
+/* 카드 본문 스타일 */
+.card-body {
+    padding: 22px;
+}
+
+/*좋아요 수*/
+.card-body>span:last-child{
+	margin-left: auto;
+	background-color: #f0f0f0;
+}
+
+/* 카드 이미지 스타일 */
+.card-img-top {
+    width: 105%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 카드 제목 스타일 */
+.card-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 카드 내용 스타일 */
+.card-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 날짜 텍스트 스타일 */
+.date-text {
+    color: #666;
+}
+
+/* 카드 작업 메뉴 스타일 */
+.card-actions {
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: right;
+    border-top: 1px solid #eee;
+}
+
+/* 카드 작업 메뉴 링크 스타일 */
+.card-actions a {
+    color: #cc0000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 카드 작업 메뉴 링크 호버 스타일 */
+.card-actions a:hover {
+    text-decoration: underline;
+}
+
+
+/*-----------------마우스 오버시 동적 이벤트------------*/
+
+
+
+.SMN_effect-19 {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+}
+
+.SMN_effect-19:before, .SMN_effect-19:after {
+  content: "";
+  width: 770%;
+  height: 0;
+  background: #353535;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  position: absolute;
+  top: 0;
+  right: -50%;
+  transform: rotate(45deg);/*우측상단,좌측 하단 각도*/
+  transition: all 0.3s ease 0s;
+}
+
+.SMN_effect-19:after {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, .3);
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: -50%;
+}
+
+.SMN_effect-19:hover:before, .SMN_effect-19:hover:after {
+  height: 40%;
+}
+
+.SMN_effect->.card-body {
+  display: block;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 2px solid rgba(255, 255, 255, .3);
+  z-index: 1;
+}
+
+

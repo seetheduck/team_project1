@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/NanumGothic-Regular.ttf') format('truetype');
+}
+#container{
+	height: 720px;
+}
+.header{
+	height: 117px;
+	background-color: grey;
+}
+
+.content{
+	width: 900px;
+	border: 1px, solid;
+	margin: 0 auto;
+	margin-top: 130px;
+	flex-direction: column;
+}
+
+.footer{
+	height: 117px;
+	bottom: opx;
+}
+
+.user_data{
+	height: 562px;
+	border: 1px, solid red;
+}
+.btn_area{
+	height: 70px;
+	width: 800px;
+	display: flex;
+	margin: 0 auto;
+}
+
+.btn_move{
+	padding: 10px 20px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+.user_table{
+	padding-left: 40px;
+}
+
+.row_value{
+	display: table-row;
+}
+.cell_value{
+	display: table-cell;
+	padding: 0px 20px;
+}

@@ -1,0 +1,268 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/NanumGothic-Regular.ttf') format('truetype');
+}
+.container{
+	background-color: rgb(255,248,220);
+}
+.header {
+	height: 117px; 
+	background: white;
+	border-bottom: 1px solid #84A8F4;
+}
+
+.content{
+	height: 1466px; 
+	background-color: rgb(255,248,220);
+	
+.top-content{
+		background-image: url("../image/mainbanner_imsi.jpg");
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: right;
+		width: 1008px; 
+		height: 313px; 
+		margin: auto; 
+		margin-top: 50px; 
+		
+	}
+h3{
+	left: 70px;
+	top: 10px;
+}
+
+.rec-review {
+	width: 1008px; 
+	height: 268px; 
+	margin: auto; 
+	margin-top: 50px;
+}
+h2{
+	width: 1008px; 
+	height: 30px;
+	
+}
+.review-first{
+	width: 550px;
+	height: 214px;
+	float: left;
+	display: flex;
+}
+
+.first_img{
+	width: 150px;
+	height: 214px;
+	background-image: url("../image/book_no2.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.first_text{
+	width: 400px;
+	height: 214px;
+	margin-left: 8px; 
+}
+.review_slide{
+	width: 415px;
+	height: 214px;
+	float: right;
+	 overflow-x: hidden;
+}
+.inner_slide{
+	display: flex;
+	transition: .3s ease_out;
+	height: 100%;
+}
+.inner{
+	margin: 0 25px;
+	display: flex;
+}
+
+.slide_img{
+	width: 180px;
+	height: 97%;
+	background-image: url("../image/book_no5.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.slide_txt{
+	width: 200px;
+	height: 97%;
+	border: none;
+}
+.event-banner{
+	width: 1008px; height: 233px; background-color: yellow; margin: auto; margin-top: 45px;
+}
+
+.rec-book{
+	width: 1008px; 
+	height: 355px; 
+	margin: auto; 
+	margin-top: 84px;
+}
+.book-first{
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	float: left;
+	box-shadow: 0 0 0 10px #9FDAC8;
+	background-image: url("../image/book_no4.jpg");
+	background-size: cover;
+	cursor: pointer;
+}	
+
+.book-second{
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	float: left;
+	margin-left: 25px;
+	margin-top: 90px;
+	box-shadow: 0 0 0 10px #F9CA84;
+	background-image: url("../image/book_no1.jpg");
+	background-size: cover;
+	cursor: pointer;
+}
+.book-third{
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	float: left;
+	margin-left: 25px;
+	margin-top: -10px;
+	box-shadow: 0 0 0 10px #87A6F6;
+	background-image: url("../image/book_no6.jpg");
+	background-size: cover;
+	cursor: pointer;
+}
+.book-fourth{
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	float: left;
+	margin-left:25px;
+	margin-top: 80px;
+	box-shadow: 0 0 0 10px #F885A2;
+	background-image: url("../image/book_no3.jpg");
+	background-size: cover;
+	cursor: pointer;
+}
+	
+}
+
+.footer {
+	width: 100%;
+	height: 117px; 
+	background-color: none;
+}
+
+.head_wrapper{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.header_menu{
+    float: left;
+    width: 8%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.header_logo{
+    float: left;
+    width: 10%;
+    height: 80%;
+    margin-left: 10%;
+    box-sizing: border-box;
+    background-image: url("../image/logo ver1.png");
+    background-size: contain;
+    background-position: right top;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    
+    
+}
+.header_search{
+	float: left;
+    width: 57%;
+    height: 100%;
+    box-sizing: border-box;
+    
+   
+}
+.header_login{
+	float: right;
+	width: 15%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 15px;
+}
+.search_box{
+	height: 64px;
+	width: 80%;
+	background: white;
+	border-radius: 20px;
+	border: 2px solid #84A8F4;
+	position: relative;
+	margin-top: 20px;
+}
+.search_txt{
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0px;
+	color: black;
+	font-size: 24px;
+	line-height: 64px;
+	width: 70%;
+}
+.search_btn{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: none;
+	background: none;
+	font-size: 35px;
+	cursor: pointer;
+}
+.search_detailbtn{
+	position: absolute;
+	right: -120px;
+	font-size: 20px;
+	height: 64px;
+	width: 99px;	
+	border-radius: 20px;
+	cursor: pointer;
+	border: 2px solid #84A8F4;
+	background-color: white;
+}
+.login_btn{
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	font-size: 18px;
+	height: 64px;
+	width: 110px;	
+	border-radius: 20px;
+	cursor: pointer;
+	border:none;
+	border: 2px solid #84A8F4;
+	background-color: white;
+}
+
+.bottom_info{
+	border-top: 1px solid black;
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+span{
+	cursor: pointer;
+}
