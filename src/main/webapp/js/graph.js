@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    fetch('../admin/getData.jsp')
+    fetch('../admin_main/getData.jsp')
         .then(response => response.json())  // 응답을 JSON으로 변환
         .then(data => {
             const ctx = document.getElementById('myChart').getContext('2d');
@@ -23,7 +23,7 @@ $(document).ready(function() {
                 data: {
                     labels: labels,  // x축에 표시될 라벨 설정
                     datasets: [{
-                        label: '유저 현황',
+                        label: '최근 가입 유저 현황',
                         data: counts,  // y축에 표시될 데이터
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
