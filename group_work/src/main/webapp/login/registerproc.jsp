@@ -3,9 +3,9 @@
 <% 
 request.setCharacterEncoding("utf-8"); //먼저 주고 받기
 %>
-<jsp:useBean id="userbean" class="pack.user.UserBean"/>
+<jsp:useBean id="userbean" class="user.UserBean"/>
 <jsp:setProperty property="*" name="userbean"/>
-<jsp:useBean id="userMgr" class="pack.user.UserMgr" />
+<jsp:useBean id="userMgr" class="user.UserMgr" />
 
 <%
 //회원가입 여부 확인

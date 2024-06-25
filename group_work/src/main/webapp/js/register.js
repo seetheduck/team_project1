@@ -1,10 +1,13 @@
+var error = document.querySelectorAll('.error_next_box');
 function idCheck(){
 	if(regForm.id.value === ""){
-		alert("id를 입력하시오");
+		error[0].innerText = "아이디를 입력해주세요.";
+		error[0].style.display = "block";
 		regForm.id.focus();
 	}else{
-		url = "idcheck.jsp?id=" + regForm.id.value;
+		url = "../login/idcheck.jsp?id=" + regForm.id.value;
 		window.open(url, "id", "width=300, height=150, top=200, left=200");
+		error[0].style.display = "none";
 	}
 }
 //로그인 체크 	

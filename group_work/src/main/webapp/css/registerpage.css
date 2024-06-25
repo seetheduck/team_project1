@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Nanum Gothic', sans-serif;
+  background-color: white;
 }
 
 html {
@@ -17,7 +18,6 @@ html {
 body {
     margin: 0;
     height: 100%;
-    background: #f5f6f7;
 }
 
 .login{
@@ -40,9 +40,15 @@ body {
 }
 
 #header {
-    padding-top: 62px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
     height: 117px; 
+    display: flex;
+	justify-content: center;
+}
+#header img{
+	height: 100%;
+	cursor: pointer;
 }
 #wrapper {
     position: relative;
@@ -54,20 +60,20 @@ body {
     height: 100%;
 }
 
-#content {
+#content{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
     width: 460px;
 }
 
-#content_login {
+#content_login{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    width: 460px;    
-    border: 1px solid;
-    border-radius: 30px;
+    width: 460px;  
+    border: 2px, solid, #87A6F6;
+    border-radius: 10%;
     padding: 60px 30px 10px;
 }
 
@@ -77,45 +83,62 @@ body {
     font-weight: 700;
 }
 
-h3 {
+h3{
     margin: 19px 0 8px;
     font-size: 14px;
     font-weight: 700;
 }
 
-.box {
+.box{
     display: block;
     width: 100%;
     height: 51px;
-    border: solid 1px #dadada;
+    border: 2px, solid, #87A6F6;
     padding: 10px 14px 10px 14px;
     box-sizing: border-box;
     background: #fff;
     position: relative;
 }
 
-.btn_area {
+.btn_area{
     margin: 30px 0 91px;
 }
-
-#btnSubmit {
+.btnpush{
+	width:80px;
+	height:30px;
+	padding: 5px 0;
+	border: 2px, solid, #87A6F6;
+	background-color: white;
+	border-radius: 10%;
+}
+.btnpush:hover{
+	box-shadow: 1px 1px 20px #ddd;
+	transform:scale(1.1)	
+}	
+span{
+	cursor: pointer;
+}
+[type="radio"]:hover{
+	cursor: pointer;
+}
+#btnSubmit{
     width: 100%;
     padding: 21px 0 17px;
 
     border: 0;
     cursor: pointer;
     color: #fff;
-    background-color: #F6C988;
+    background-color:#87A6F6;
     font-size: 20px;
     font-weight: 400;
 }
 
 #btn_close{
 	width: 30%;
-	
 	border: 0;
 	color: #fff;
-    background-color: #9FDAC8;
+    background-color:#87A6F6;
+    cursor: pointer;
 }
 
 .bottom_info{
@@ -131,4 +154,11 @@ h3 {
 	border: none;
 	background: none;
 	cursor: pointer;
+}
+
+.error_next_box {
+    margin-top: 9px;
+    font-size: 12px;
+    color: red;    
+    display: none;
 }

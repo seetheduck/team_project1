@@ -7,6 +7,7 @@
 }
 #container{
 	height: 720px;
+	background-color: rgb(255,248,220);
 }
 .header{
 	height: 117px;

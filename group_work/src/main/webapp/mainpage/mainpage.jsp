@@ -1,4 +1,4 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+		<%@ page language="java" contentType="text/html; charset=UTF-8"
 	    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
-<link rel="stylesheet" href="../css/mainpage.css">
+<link rel="stylesheet" href="../css/mainpage.css" type="text/css">
 </head>
 <body>
 <div class="container" >
@@ -25,44 +25,34 @@
 		</div>
 		<div class="rec-review">
 			<h2>이달의 리뷰</h2>
-				<div class="review-first">
-					<div class="first_img">
-					</div>
-					<div class="first_text">
-						<span onclick="location.href='https://dhlottery.co.kr/gameResult.do?method=byWin'">
-						<h3>내일은 나도 백만 유튜버??</h3>
-						<h4>청산에 살어리랏다</h4>
-						유튜버는 무슨 놀고먹고 싶다 로또 당첨 되고 싶다 불로 소득 최고시다 이말이야
-						</span>
-					</div>
+			<div class="review-first">
+				<div class="first_img">
 				</div>
-				<div class="review_slide">
-					<div class="inner_slide">
-						<div class="inner">
-							<div class="slide_img">
-								
-							</div>
-							<div class="slide_txt">
-								배고프다 배고프다 배고프다 배고프다 배고프다
-							</div>
-						</div>
-						<div class="inner">
-							<div class="slide_img">
-								
-							</div>
-							<div class="slide_txt">
-								배고프다 배고프다 배고프다 배고프다 배고프다
-							</div>
-						</div>
-						
-					</div>
+				<div class="first_text">
+					<span onclick="location.href='https://dhlottery.co.kr/gameResult.do?method=byWin'">
+					<h3>내일은 나도 백만 유튜버??</h3>
+					<h4>청산에 살어리랏다</h4>
+					유튜버는 무슨 놀고먹고 싶다 로또 당첨 되고 싶다 불로 소득 최고시다 이말이야
+					</span>
 				</div>
-				
-				<div class="button-list">
-				  <button class="button-left">← Left</button>
-				  <button class="button-right">Right →</button>
-				</div>
-			
+			</div>
+			  <div class="review_slide">
+		        <div class="inner_slide">
+		            <div class="inner">
+		                <div class="slide_img1"></div>
+		                <div class="slide_txt1">배고프다</div>
+		            </div>
+		            <div class="inner">
+		                <div class="slide_img2"></div>
+		                <div class="slide_txt2">배안고파</div>
+		            </div>
+		            <div class="inner">
+		                <div class="slide_img3"></div>
+		                <div class="slide_txt3">배안고파</div>
+		            </div>
+		        </div>
+  				 </div>
+  				<script src="../js/mainpage.js"></script>
 		</div>
 		<div class="event-banner">
 			<h2>이벤트</h2>

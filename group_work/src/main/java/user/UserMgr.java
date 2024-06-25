@@ -32,6 +32,7 @@ public class UserMgr {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
+			if(rs.next()) b = true;
 		} catch (Exception e) {
 			System.out.println("idCheckProcess err : " + e);
 		} finally {
@@ -78,7 +79,7 @@ public class UserMgr {
 		try {
 			
 			conn = ds.getConnection();
-			String sql = "insert into user(no,id,pw,uname,gender,email,sign_up_date) values(?,?,?,?,?,?,now())"; 
+			String sql = "insert into user(no,id,pw,uname,gender,email,sign_up_date) values(?,?,?,?,?,?,DATE(now()))"; 
 			pstmt = conn.prepareStatement(sql); 
 
 			pstmt.setInt(1, userbean.getNo());
@@ -87,7 +88,6 @@ public class UserMgr {
 			pstmt.setString(4, userbean.getUname());
 			pstmt.setInt(5, userbean.getGender());
 			pstmt.setString(6, userbean.getEmail());
-			pstmt.setString(7, sql);
 			
 			if(pstmt.executeUpdate() > 0) b = true;
 		} catch (Exception e) {

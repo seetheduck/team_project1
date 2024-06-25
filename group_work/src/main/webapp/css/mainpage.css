@@ -6,6 +6,8 @@
   src: url('fonts/NanumGothic-Regular.ttf') format('truetype');
 }
 .container{
+	width: 100%;
+	height:100%;
 	background-color: rgb(255,248,220);
 }
 .header {
@@ -68,30 +70,47 @@ h2{
 	width: 415px;
 	height: 214px;
 	float: right;
-	 overflow-x: hidden;
+	position: relative;
+	overflow: hidden;
 }
 .inner_slide{
-	display: flex;
-	transition: .3s ease_out;
 	height: 100%;
-}
-.inner{
-	margin: 0 25px;
+	float:left;
 	display: flex;
+	position:relative;
+	transition: transform 1s ease-in-out;
+    width: 100%;
+}
+.inner {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.slide_img{
-	width: 180px;
-	height: 97%;
-	background-image: url("../image/book_no5.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
+.slide_img1, .slide_img2, .slide_img3 {
+    width: 180px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
+    border-bottom: 1px solid;
 }
-.slide_txt{
-	width: 200px;
-	height: 97%;
-	border: none;
+
+.slide_txt1, .slide_txt2, .slide_txt3 {
+    width: 40%;
+    height: 97%;
+    border: none;
+    float: left;
+	background-color: white;
 }
+
+.slide_img1 { background-image: url("../image/book_no2	.jpg"); }
+.slide_img2 { background-image: url("../image/book_no2.jpg"); }
+.slide_img3 { background-image: url("../image/book_no2.jpg"); }
+
 .event-banner{
 	width: 1008px; height: 233px; background-color: yellow; margin: auto; margin-top: 45px;
 }
@@ -111,8 +130,11 @@ h2{
 	background-image: url("../image/book_no4.jpg");
 	background-size: cover;
 	cursor: pointer;
+	transition:all 0.1s linear;
 }	
-
+.book-first:hover{
+	transform:scale(1.1)
+}
 .book-second{
 	width: 230px;
 	height: 230px;
@@ -124,6 +146,10 @@ h2{
 	background-image: url("../image/book_no1.jpg");
 	background-size: cover;
 	cursor: pointer;
+	transition:all 0.1s linear;
+}	
+.book-second:hover{
+	transform:scale(1.1)
 }
 .book-third{
 	width: 230px;
@@ -136,6 +162,10 @@ h2{
 	background-image: url("../image/book_no6.jpg");
 	background-size: cover;
 	cursor: pointer;
+	transition:all 0.1s linear;
+}	
+.book-third:hover{
+	transform:scale(1.1)
 }
 .book-fourth{
 	width: 230px;
@@ -148,8 +178,11 @@ h2{
 	background-image: url("../image/book_no3.jpg");
 	background-size: cover;
 	cursor: pointer;
+	transition:all 0.1s linear;
+}	
+.book-fourth:hover{
+	transform:scale(1.1)
 }
-	
 }
 
 .footer {
@@ -159,47 +192,41 @@ h2{
 }
 
 .head_wrapper{
-	width: 100%;
+	width: 1440px;
 	height: 100%;
-	margin: auto;
+	padding: 20px 20px;
 }
 
 .header_menu{
     float: left;
     width: 8%;
     height: 100%;
-    box-sizing: border-box;
 }
 
 .header_logo{
     float: left;
-    width: 10%;
+    width: 150px;
     height: 80%;
     margin-left: 10%;
     box-sizing: border-box;
-    background-image: url("../image/logo ver1.png");
-    background-size: contain;
-    background-position: right top;
-    background-repeat: no-repeat;
     cursor: pointer;
-    
-    
+}
+.logo_img{
+	height: 100%;
+	width: 100%;
 }
 .header_search{
 	float: left;
     width: 57%;
     height: 100%;
     box-sizing: border-box;
-    
-   
 }
 .header_login{
-	float: right;
-	width: 15%;
+	width: 12%;
     height: 100%;
     box-sizing: border-box;
-    position: relative;
-    margin-top: 15px;
+    position: relative;		
+    float: right;
 }
 .search_box{
 	height: 64px;
@@ -208,7 +235,6 @@ h2{
 	border-radius: 20px;
 	border: 2px solid #84A8F4;
 	position: relative;
-	margin-top: 20px;
 }
 .search_txt{
 	border: none;
@@ -243,8 +269,6 @@ h2{
 }
 .login_btn{
 	position: absolute;
-	top: 5px;
-	left: 50px;
 	font-size: 18px;
 	height: 64px;
 	width: 110px;	
@@ -253,6 +277,7 @@ h2{
 	border:none;
 	border: 2px solid #84A8F4;
 	background-color: white;
+	margin-top: 2px;
 }
 
 .bottom_info{
