@@ -1,7 +1,7 @@
-var error = document.querySelectorAll('.error_next_box');
 function idCheck(){
+var error = document.querySelectorAll('.error_next_box');
 	if(regForm.id.value === ""){
-		error[0].innerText = "아이디를 입력해주세요.";
+		error[0].innerHTML = "아이디를 입력해주세요.";
 		error[0].style.display = "block";
 		regForm.id.focus();
 	}else{
