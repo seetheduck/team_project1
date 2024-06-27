@@ -33,7 +33,7 @@ window.onload = () => {
 	<tr>
 		<td colspan="2" style="text-align: center;">
 			<input type="button" value="로그인" id="btnAdminLogin">
-			<input type="button" value="메인페이지" onclick="location.href='../login/login.jsp'">
+			<input type="button" value="메인페이지" onclick="location.href='../mainpage/mainpage.jsp'">
 		</td>
 	</tr>
 </table>

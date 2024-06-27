@@ -1,0 +1,20 @@
+.book{
+  position: relative; /* 부모 요소에 대해 상대적 위치 설정 */
+  float: left;
+  display: block; /* 이미지를 블록 요소로 설정하여 버튼이 위에 올라가도록 함 */
+  margin-right: 20px; /* 이미지와의 간격 조정 */
+}
+button.zbtn {
+  position: absolute; /* 절대 위치 설정 */
+  top: 10px; /* 이미지 상단에 위치 */
+  right: 10px; /* 이미지 우측에 위치 */
+  z-index: 1; /* 버튼이 이미지 위에 올라가도록 설정 */
+  background-color: white; /*버튼 기본색 하양으로 */
+}
+
+button.zbtn:hover {
+	background-color: pink;/*버튼에 마우스커서올라가면 핑크로 */
+}
+button.zbtn:active {
+	background-color: red; /*버튼에 마우스클릭~클릭해제시가지 빨강으로 */
+}

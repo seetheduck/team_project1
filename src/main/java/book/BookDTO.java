@@ -1,13 +1,14 @@
 package book;
 
 public class BookDTO {
-	int bum;
-	String title,author,publisher,pyear,thumb_nail;
-	public int getBum() {
-		return bum;
+	int bnum,pyear;
+	String title,author,publisher,thumb_nail;
+	
+	public int getBnum() {
+		return bnum;
 	}
-	public void setBum(int bum) {
-		this.bum = bum;
+	public void setBnum(int bnum) {
+		this.bnum = bnum;
 	}
 	public String getTitle() {
 		return title;
@@ -27,10 +28,10 @@ public class BookDTO {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public String getPyear() {
+	public int getPyear() {
 		return pyear;
 	}
-	public void setPyear(String pyear) {
+	public void setPyear(int pyear) {
 		this.pyear = pyear;
 	}
 	public String getThumb_nail() {

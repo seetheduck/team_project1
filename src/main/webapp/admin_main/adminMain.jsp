@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>admin page(dashboard)</title>
+<title>관리자 페이지</title>
 <link rel="stylesheet" href="../css/adminMain.css">
 </head>
 <body>

@@ -1,0 +1,32 @@
+/* 라디오버튼모양 호버로 별구현 */
+.star-rating {
+  display: flex;
+}
+
+.star {
+  appearance: none; /* 기존 라디오모양 표시X */
+  padding: 1px;
+}
+
+.star::after { /* 대신 원하는별모양으로 표현 */
+  content: '☆'; /* 간단하게 별모양특수기호로. 저작권염려.*/
+  color: hsl(60, 80%, 45%);
+  font-size: 20px;
+}
+
+.star:hover::after { /* 마우스올릴대 별색칠되게*/
+  content: ★;
+}
+
+.star:has(~ .star:hover)::after {/*자식요소. 주욱마우스오버하면 주욱색칠*/
+  content: '★';
+}
+
+.star:checked::after,
+.star:has(~ .star:checked)::after { /* 클릭시 별고정*/
+  content: '★';
+}
+
+.star:hover ~ .star::after {/*호버중일때 뒷 별은 다시빈별으로*/
+  content: '☆';
+}

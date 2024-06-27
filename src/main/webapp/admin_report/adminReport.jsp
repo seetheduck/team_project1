@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>admin page(report)</title>
+<title>관리자 페이지(신고/문의)</title>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="../js/adminReDetail.js"></script>
 </head>
@@ -38,6 +38,24 @@
 	</c:forEach>
 	
 </table>
+</div>
+<div class="pagination">    
+<% 
+adminMgr.reportTotalPage(); //전체 페이지 수 계산
+%>
+<tr>
+<td colspan="4" style="text-align: center;">
+<%
+if(adminMgr.reportTotalPage() > 0){
+	for(int pageNo=1; pageNo<= adminMgr.reportTotalPage(); pageNo++){
+%>
+<a href="adminReport.jsp?pa=<%=pageNo %>"><%=pageNo %></a>&nbsp;
+<%
+	}
+}
+%>
+</td>
+</tr>
 </div>
 </main>
 <%@ include file="../admin_main/admin_foot.jsp" %>

@@ -23,7 +23,22 @@ body, html {
 .header {
     grid-area: header;
     background-color: #ddd;
+    display: flex;
+    justify-content: space-between;
 }
+
+.home{
+	padding : 7px;
+	margin-left: 3px;
+}
+
+.logout{
+	color: black;
+	text-decoration: none;
+	padding-right: 20px;
+	padding-top: 15px;
+}
+
 
 .sidebar {
     grid-area: sidebar;
@@ -78,4 +93,59 @@ body, html {
     grid-area: footer;
     background-color: #ddd;
 }
+
+.pagination {
+    position: fixed;
+    bottom: 50px; /* 페이지 하단에서의 거리 */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 120px;
+}
+
+
+.pagination a {
+	margin: 0 5px;
+	text-decoration: none;
+	color: #000;
+}
+
+.pagination a.active {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.dash1{
+	display: flex;
+	justify-content: space-between;
+}
+
+.dashRe{
+	width: 40%;
+	height: 200px;
+	margin-right: 50px;
+	margin-top: 14px;
+}
+
+.dashRe a{
+	text-decoration: none;
+	color: black;
+}
+
+.dashRe th{
+	font-size: 14px;
+}
+
+.dashRe td{
+	padding: 7px;
+	padding-top: 11px;
+}
+
 

@@ -8,8 +8,12 @@ if(adminId == null){
 }
 
 %>
-
+<link rel="stylesheet" href="../css/adminMain.css">
 <header class="header">
+<a href="../admin_main/adminMain.jsp" class="home">
+	<img src="../image/cookie.jpg" style="width: 50px; border-radius: 70%;">
+</a>
+<a href="../admin_login/adminLogout.jsp" class="logout">로그아웃</a>
 </header>
         
 <nav class="sidebar">

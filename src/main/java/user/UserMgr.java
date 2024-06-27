@@ -3,7 +3,6 @@ package user;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -14,51 +13,120 @@ public class UserMgr {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private DataSource ds;
-
-	public UserMgr() {
+	
+	public UserMgr() { //db와 연결
 		try {
 			Context context = new InitialContext();
-			ds = (DataSource) context.lookup("java:comp/env/jdbc_maria");
-		} catch (Exception e) {
-			System.out.println("Db 연결 실패:" + e);
+			ds = (DataSource)context.lookup("java:comp/env/jdbc_maria");
+			
+		} catch (Exception e) {	
+			System.out.println("db 연결 실패 : " + e);
 		}
 	}
-
-
-	public boolean memberInsert(UserBean mbean) {
+	public boolean idCheckProcess(String id) { //id체크 프로세스
 		boolean b = false;
-		// System.out.println(mbean.getId() + " " + mbean.getName());
-
+		
 		try {
 			conn = ds.getConnection();
-			String sql = "insert into user values(?,?,?,?)";
+			String sql = "select id from user where id=?"; 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, mbean.getId());
-			pstmt.setString(2, mbean.getPw());
-			pstmt.setString(3, mbean.getUname());
-			pstmt.setString(4, mbean.getEmail());
-			if (pstmt.executeUpdate() > 0)
-				b = true; // insert에 성공하면 b는 true가 된다.
-
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) b = true;
 		} catch (Exception e) {
-			System.out.println("memberInsert err : " + e);
+			System.out.println("idCheckProcess err : " + e);
 		} finally {
 			try {
-				if (rs != null)
-					rs.close();
-				if (pstmt != null)
-					pstmt.close();
-				if (conn != null)
-					conn.close();
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
 			} catch (Exception e2) {
-
+				// TODO: handle exception
 			}
+
 		}
 		return b;
 	}
+	//user테이블의 최대 no 수
+		public int currentMaxNo() {  
+			String sql = "select max(no) from user";
+			int no = 0;
+			
+			try {
+				conn = ds.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					no = rs.getInt(1);					
+				}
+			} catch (Exception e) {
+				System.out.println("currentMaxNum err : " + e);
+			}finally {
+				try {
+					if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
 
+			}
+			return no;
+		}
 	
-	public UserBean getMember(String id) {
+		public boolean userInsert(UserBean userbean) {
+			boolean b = false;
+			try {
+				
+				conn = ds.getConnection();
+				String sql = "insert into user(no,id,pw,uname,gender,email,sign_up_date) values(?,?,?,?,?,?,DATE(now()))"; 
+				pstmt = conn.prepareStatement(sql); 
+
+				pstmt.setInt(1, userbean.getNo());
+				pstmt.setString(2, userbean.getId());
+				pstmt.setString(3, userbean.getPw());
+				pstmt.setString(4, userbean.getUname());
+				pstmt.setInt(5, userbean.getGender());
+				pstmt.setString(6, userbean.getEmail());
+				
+				if(pstmt.executeUpdate() > 0) b = true;
+			} catch (Exception e) {
+				System.out.println("UserInsert err : " + e);
+			} finally {
+				try {
+					if(rs != null) rs.close();
+					if(pstmt != null) pstmt.close();
+					if(conn != null) conn.close();
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}		
+			}
+			return b;
+		}
+	public boolean loginCheck(String id, String pw) {
+		boolean b = false;
+		try {
+			conn = ds.getConnection();
+			String sql = "select * from user where id=? and pw=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+			b = rs.next();
+		} catch (Exception e) {
+			System.out.println("loginCheck err : " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}		
+		}
+		return b;
+	}
+	public UserBean getUser(String id) {
 		UserBean bean = null;
 		try {
 			conn = ds.getConnection();
@@ -68,14 +136,18 @@ public class UserMgr {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				bean = new UserBean();
+				bean.setNo(rs.getInt("no"));
 				bean.setId(rs.getString("id"));
 				bean.setPw(rs.getString("pw"));
-				bean.setUname(rs.getString("name"));
+				bean.setUname(rs.getString("uname"));
 				bean.setEmail(rs.getString("email"));
+				bean.setGender(rs.getInt("gender"));
+				bean.setSignout_is(rs.getInt("signout_is"));
+				bean.setSign_up_date(rs.getString("sign_up_date"));
 			}
 		
 		} catch (Exception e) {
-			System.out.println("getMember err :" + e);
+			System.out.println("getUser err :" + e);
 		} finally {
 			try {
 				if (rs != null)
@@ -90,75 +162,5 @@ public class UserMgr {
 		}
 		
 		return bean;
-	}
-	
-	public boolean memberUpdate(UserBean memberBean, String id) {
-		boolean b = false;
-		
-		try {
-			conn = ds.getConnection();
-			String sql = "update user set pw=?,uname=?,email=? where id=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, memberBean.getPw());
-			pstmt.setString(2, memberBean.getUname());
-			pstmt.setString(3, memberBean.getEmail());;
-			pstmt.setString(4, id);
-			if(pstmt.executeUpdate() > 0) b = true;
-			
-		} catch (Exception e) {
-			System.out.println("memberUpdate err :" + e);
-		} finally {
-			try {
-				if (rs != null)
-					rs.close();
-				if (pstmt != null)
-					pstmt.close();
-				if (conn != null)
-					conn.close();
-			} catch (Exception e2) {
-
-			}
-		}
-		
-		return b;
-	}
-	
-
-	
-	//관리자가 전체 회원자료 읽기
-	public ArrayList<UserBean> getMemberAll(){
-		ArrayList<UserBean> list = new ArrayList<UserBean>();
-		
-		try {
-			conn = ds.getConnection();
-			String sql = "select * from user order by id asc";
-			
-			pstmt = conn.prepareStatement(sql);
-	
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				UserBean dto = new UserBean();
-				dto.setId(rs.getString("id"));
-				dto.setUname(rs.getString("uname"));
-				dto.setPw(rs.getString("pw"));
-				dto.setEmail(rs.getString("email"));
-				list.add(dto);
-			}
-
-		} catch (Exception e) {
-			System.out.println("getMemberAll err :" + e);
-		} finally {
-			try {
-				if (rs != null)
-					rs.close();
-				if (pstmt != null)
-					pstmt.close();
-				if (conn != null)
-					conn.close();
-			} catch (Exception e2) {
-
-			}
-		}
-		return list;
 	}
 }
