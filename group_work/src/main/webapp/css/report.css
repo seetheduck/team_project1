@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/*----------- report.jsp ----------------*/
+/*body 전체 영역*/
+body{
+	position: absolute;
+  	top: 25%;
+  	left: 40%;
+}
+/*제목*/
+h2{
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+/*radio 버튼 */
+.select input[type=radio]{
+    display: none;
+    border-radius: 20px;
+    gap: 20px;
+}
+/*라디오 버튼과 labal 모두*/
+.select input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 60px;
+    width: 350px;
+    border: 1px solid #333;
+    line-height: 60px;
+    text-align: center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+
+/*기본 값*/
+.select input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+/*선택 시*/
+.select input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+/*신고 버튼*/
+.repo input{
+	position: absolute;
+    width : 200px;
+    height : 40px;
+	top: 120%;
+  	left: 23%;
+}
+
+.repo input:hover {
+	width : 200px;
+    height : 40px;
+}
+/*----------- report.jsp 끝----------------*/
+
+/*----------- reportSussess.jsp ----------------*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 헤더와 푸터 스타일링 */
+.header, .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header a, .footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

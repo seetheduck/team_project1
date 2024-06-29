@@ -1,0 +1,80 @@
+myReplystylesbody {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+.container{
+	height: auto;
+	overflow:hidden;
+	background-color: rgb(255,248,220);
+}
+.contents{
+	text-align: center;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 50%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.date-text {
+    color: #999;
+}
+
+.del-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.del-button a {
+    color: #f00;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.del-button a:hover {
+    text-decoration: underline;
+}
